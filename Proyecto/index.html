@@ -34,11 +34,8 @@
       <h1 class="display-4 fw-bold">Tu cancha, tu horario, tu partido.</h1>
       <p class="lead mx-auto">Reserva facil y juega sin complicaciones con horarios disponibles, datos claros y confirmacion inmediata.</p>
       <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 mt-4">
-        <a href="reservas.html" class="btn btn-success btn-lg">
+        <button type="button" class="btn btn-success btn-lg">
           <i class="bi bi-calendar-check me-2"></i>Reservar aqui
-        </a>
-        <button class="btn btn-outline-light btn-lg" data-bs-toggle="modal" data-bs-target="#modalHorarios">
-          <i class="bi bi-clock me-2"></i>Ver horarios
         </button>
       </div>
     </div>
@@ -145,7 +142,6 @@
           <ul class="list-unstyled mb-0">
             <li><a href="#nosotros">Nosotros</a></li>
             <li><a href="#beneficios">Beneficios</a></li>
-            <li><a href="reservas.html">Reservas</a></li>
           </ul>
         </div>
       </div>
@@ -153,22 +149,6 @@
       <p class="text-center small mb-0">&copy; 2026 Mi Cancha. Todos los derechos reservados.</p>
     </div>
   </footer>
-
-  <div class="modal fade" id="modalHorarios" tabindex="-1" aria-labelledby="modalHorariosTitulo" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h2 class="modal-title h5" id="modalHorariosTitulo">Horarios de atencion</h2>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-        </div>
-        <div class="modal-body">
-          <p>Lunes a domingo de 7:00 a.m. a 11:00 p.m.</p>
-          <p class="mb-0">Los horarios nocturnos incluyen iluminacion de cancha.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <div class="modal fade" id="modalNosotros" tabindex="-1" aria-labelledby="modalNosotrosTitulo" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
@@ -187,3 +167,6 @@
   <script src="js/app.js"></script>
 </body>
 </html>
+
+
+
