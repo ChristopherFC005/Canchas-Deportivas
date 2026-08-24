@@ -1,0 +1,249 @@
+:root {
+  --green: #059447;
+  --green-dark: #063f2a;
+  --lime: #99d23a;
+  --ink: #16231d;
+  --muted: #647067;
+  --line: #dfe8e2;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+  background: rgba(4, 37, 27, 0.84);
+  backdrop-filter: blur(10px);
+}
+
+.navbar .nav-link {
+  color: rgba(255, 255, 255, 0.86);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+  color: #ffffff;
+}
+
+.hero-section {
+  align-items: center;
+  background:
+    linear-gradient(rgba(4, 28, 22, 0.38), rgba(4, 28, 22, 0.56)),
+    url("https://images.unsplash.com/photo-1459865264687-595d652de67e?auto=format&fit=crop&w=1800&q=80") center/cover;
+  color: #ffffff;
+  display: flex;
+  min-height: 760px;
+  padding: 120px 0 80px;
+}
+
+.hero-content {
+  max-width: 860px;
+}
+
+.hero-content p {
+  max-width: 720px;
+}
+
+.section-pad {
+  padding: 90px 0;
+}
+
+.step-card {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 18px 40px rgba(14, 51, 35, 0.08);
+  padding: 28px;
+  position: relative;
+  text-align: center;
+}
+
+.step-number {
+  align-items: center;
+  background: var(--green);
+  border-radius: 50%;
+  color: #ffffff;
+  display: inline-flex;
+  font-weight: 700;
+  height: 34px;
+  justify-content: center;
+  left: 18px;
+  position: absolute;
+  top: 18px;
+  width: 34px;
+}
+
+.step-icon {
+  color: var(--green);
+  display: block;
+  font-size: 48px;
+  margin: 18px 0;
+}
+
+.step-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.step-card p {
+  color: var(--muted);
+  margin-bottom: 0;
+}
+
+.reservation-band {
+  background:
+    linear-gradient(135deg, rgba(3, 68, 42, 0.94), rgba(4, 132, 62, 0.88)),
+    url("https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=1800&q=80") center/cover;
+  color: #ffffff;
+}
+
+.reservation-copy,
+.reservation-form {
+  border-radius: 8px;
+}
+
+.reservation-copy {
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 34px;
+}
+
+.reservation-copy li {
+  margin-bottom: 14px;
+}
+
+.reservation-form {
+  background: #ffffff;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+  color: var(--ink);
+  padding: 34px;
+}
+
+.form-control,
+.form-select {
+  border-color: #cfdad3;
+  min-height: 46px;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--green);
+  box-shadow: 0 0 0 0.25rem rgba(5, 148, 71, 0.18);
+}
+
+.phone-preview {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 18px 40px rgba(14, 51, 35, 0.08);
+  max-height: 470px;
+  overflow: hidden;
+}
+
+.phone-preview img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+  width: 100%;
+}
+
+.info-tile {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.info-tile i {
+  color: var(--green);
+  display: block;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.info-tile strong,
+.info-tile span {
+  display: block;
+}
+
+.info-tile span {
+  color: var(--muted);
+}
+
+.footer-section {
+  background: #e8ecea;
+  color: #455049;
+  padding: 58px 0 28px;
+}
+
+.footer-section h2,
+.footer-section h3 {
+  color: var(--green-dark);
+}
+
+.footer-section a {
+  color: #455049;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  color: var(--green);
+}
+
+.social-links {
+  display: flex;
+  gap: 16px;
+}
+
+.social-links a {
+  align-items: center;
+  background: var(--green);
+  border-radius: 50%;
+  color: #ffffff;
+  display: inline-flex;
+  height: 38px;
+  justify-content: center;
+  width: 38px;
+}
+
+.social-links a:hover {
+  background: var(--green-dark);
+  color: #ffffff;
+}
+
+@media (max-width: 991.98px) {
+  .hero-section {
+    min-height: 650px;
+  }
+
+  .navbar-collapse {
+    padding: 14px 0;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .hero-section {
+    min-height: 620px;
+    padding-top: 100px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.25rem;
+  }
+
+  .section-pad {
+    padding: 64px 0;
+  }
+
+  .reservation-copy,
+  .reservation-form {
+    padding: 24px;
+  }
+}
