@@ -97,46 +97,6 @@ body {
   margin-bottom: 0;
 }
 
-.reservation-band {
-  background:
-    linear-gradient(135deg, rgba(3, 68, 42, 0.94), rgba(4, 132, 62, 0.88)),
-    url("https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=1800&q=80") center/cover;
-  color: #ffffff;
-}
-
-.reservation-copy,
-.reservation-form {
-  border-radius: 8px;
-}
-
-.reservation-copy {
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  padding: 34px;
-}
-
-.reservation-copy li {
-  margin-bottom: 14px;
-}
-
-.reservation-form {
-  background: #ffffff;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
-  color: var(--ink);
-  padding: 34px;
-}
-
-.form-control,
-.form-select {
-  border-color: #cfdad3;
-  min-height: 46px;
-}
-
-.form-control:focus,
-.form-select:focus {
-  border-color: var(--green);
-  box-shadow: 0 0 0 0.25rem rgba(5, 148, 71, 0.18);
-}
-
 .phone-preview {
   background: #ffffff;
   border: 1px solid var(--line);
@@ -242,6 +202,54 @@ body {
     padding: 64px 0;
   }
 
+}
+
+.reservation-page {
+  padding-top: 72px;
+}
+
+.reservation-band {
+  background:
+    linear-gradient(135deg, rgba(3, 68, 42, 0.94), rgba(4, 132, 62, 0.88)),
+    url("https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=1800&q=80") center/cover;
+  color: #ffffff;
+  min-height: 100vh;
+}
+
+.reservation-copy,
+.reservation-form {
+  border-radius: 8px;
+}
+
+.reservation-copy {
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 34px;
+}
+
+.reservation-copy li {
+  margin-bottom: 14px;
+}
+
+.reservation-form {
+  background: #ffffff;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+  color: var(--ink);
+  padding: 34px;
+}
+
+.form-control,
+.form-select {
+  border-color: #cfdad3;
+  min-height: 46px;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--green);
+  box-shadow: 0 0 0 0.25rem rgba(5, 148, 71, 0.18);
+}
+
+@media (max-width: 575.98px) {
   .reservation-copy,
   .reservation-form {
     padding: 24px;
