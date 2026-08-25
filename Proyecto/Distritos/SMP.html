@@ -2,17 +2,37 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Canchas de Futbol - San Martin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canchas de Futbol - San Martin de Porres</title>
   <link rel="stylesheet" href="css/resultados.css">
 </head>
 <body>
-  <header class="header-resultados">
-    <h2>Canchas de Futbol disponibles</h2>
-    <div class="subtitulo">Distrito: <span id="nombreDistrito"></span></div>
-    <div class="filtro-fijo">Deporte: Futbol</div>
+
+  <nav class="navbar">
+    <a href="#" class="marca"><span class="logo-icono">🏟️</span> CanchaYa</a>
+    <a href="../ReservaAqui/reserva.html" class="volver">← Cambiar distrito</a>
+  </nav>
+
+  <header class="hero-distrito">
+    <span class="etiqueta-deporte">⚽ Futbol</span>
+    <h1>Canchas en <span class="distrito-nombre" id="nombreDistrito"></span></h1>
+    <p class="descripcion">Revisa la disponibilidad de horarios y elige la cancha que mejor te quede.</p>
+
+    <div class="stats-rapidas">
+      <div class="stat-chip">
+        <div class="valor" id="statCanchas">0</div>
+        <div class="etiqueta">Canchas encontradas</div>
+      </div>
+      <div class="stat-chip">
+        <div class="valor" id="statDisponibles">0</div>
+        <div class="etiqueta">Horarios libres</div>
+      </div>
+    </div>
   </header>
+
   <main id="listaResultados"></main>
-  <script src="js/canchas-data.js"></script>
+
+  <script src="js/canchas.js"></script>
   <script>const DISTRITO_ACTUAL = "San Martin";</script>
   <script src="js/resultados.js"></script>
 </body>

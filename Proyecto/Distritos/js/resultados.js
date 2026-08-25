@@ -4,6 +4,24 @@ function buscarCanchas() {
   );
 }
 
+function contarDisponibles(cancha) {
+  let total = 0;
+  Object.values(cancha.horarios).forEach(dia => {
+    total += dia.filter(slot => slot.estado === "disponible").length;
+  });
+  return total;
+}
+
+function crearBadgeDisponibilidad(cantidad) {
+  if (cantidad === 0) {
+    return `<span class="badge-libres sin-cupo">Sin horarios libres</span>`;
+  }
+  if (cantidad <= 4) {
+    return `<span class="badge-libres pocas">${cantidad} horarios libres</span>`;
+  }
+  return `<span class="badge-libres">${cantidad} horarios libres</span>`;
+}
+
 function crearCardCancha(cancha) {
   const dias = Object.keys(cancha.horarios);
 
@@ -21,28 +39,49 @@ function crearCardCancha(cancha) {
   }).join("");
 
   const encabezadoDias = dias.map(d => `<th>${d}</th>`).join("");
+  const disponibles = contarDisponibles(cancha);
 
   return `
-    <section class="card-cancha">
-      <h3>${cancha.nombre}</h3>
-      <p class="direccion">${cancha.direccion} - Tel: ${cancha.telefono}</p>
+    <article class="card-cancha">
+      <div class="card-cabecera">
+        <div class="icono-deporte">⚽</div>
+        <div class="info-cancha">
+          <h3>${cancha.nombre}</h3>
+          <p class="direccion">📍 ${cancha.direccion}</p>
+        </div>
+        ${crearBadgeDisponibilidad(disponibles)}
+      </div>
       <div class="tabla-horarios-wrap">
         <table class="tabla-horarios">
           <thead><tr><th></th>${encabezadoDias}</tr></thead>
           <tbody>${filasHoras}</tbody>
         </table>
       </div>
-      <div class="leyenda">
-        <span><span class="caja disponible"></span> Disponible</span>
-        <span><span class="caja reservado"></span> Reservado</span>
+      <div class="card-pie">
+        <div class="leyenda">
+          <span><span class="caja disponible"></span> Disponible</span>
+          <span><span class="caja reservado"></span> Reservado</span>
+        </div>
+        <p class="telefono">📞 ${cancha.telefono}</p>
       </div>
-    </section>
+    </article>
   `;
+}
+
+function actualizarStats(resultados) {
+  const totalCanchas = resultados.length;
+  const totalDisponibles = resultados.reduce((acc, c) => acc + contarDisponibles(c), 0);
+  const elCanchas = document.getElementById("statCanchas");
+  const elDisponibles = document.getElementById("statDisponibles");
+  if (elCanchas) elCanchas.innerText = totalCanchas;
+  if (elDisponibles) elDisponibles.innerText = totalDisponibles;
 }
 
 function mostrarResultados() {
   const resultados = buscarCanchas();
   const contenedor = document.getElementById("listaResultados");
+
+  actualizarStats(resultados);
 
   if (resultados.length === 0) {
     contenedor.innerHTML = `<p class="sin-resultados">No hay canchas de futbol registradas en ${DISTRITO_ACTUAL}.</p>`;

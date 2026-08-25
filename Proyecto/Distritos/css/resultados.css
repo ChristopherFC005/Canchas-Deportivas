@@ -1,67 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --azul: #2563eb;
+  --azul-oscuro: #0f172a;
+  --azul-medio: #1e3a8a;
+  --verde: #16a34a;
+  --verde-claro: #dcfce7;
+  --rojo: #ef4444;
+  --rojo-claro: #fee2e2;
+  --gris-fondo: #f1f5f9;
+  --gris-texto: #64748b;
+  --borde: #e2e8f0;
+}
+
 * { box-sizing: border-box; }
 
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #f4f6f8;
-  color: #222;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  background: var(--gris-fondo);
+  color: #1e293b;
 }
 
-.header-resultados {
-  padding: 18px 28px;
-  background: #0d2b52;
+/* ---------- NAVBAR ---------- */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 32px;
+  background: var(--azul-oscuro);
   color: #fff;
 }
-.header-resultados h2 { margin: 0 0 4px 0; }
-.header-resultados .subtitulo { font-size: 14px; opacity: 0.85; }
 
-.filtro-fijo {
-  display: inline-block;
-  background: #16407a;
-  padding: 4px 10px;
-  border-radius: 4px;
-  margin-top: 8px;
-  font-size: 13px;
+.navbar .marca {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 20px;
+  text-decoration: none;
+  color: #fff;
 }
 
+.navbar .marca .logo-icono {
+  font-size: 24px;
+}
+
+.navbar .volver {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 8px 14px;
+  border: 1px solid #334155;
+  border-radius: 20px;
+  transition: background 0.2s;
+}
+
+.navbar .volver:hover {
+  background: #1e293b;
+}
+
+/* ---------- HERO DEL DISTRITO ---------- */
+.hero-distrito {
+  background: linear-gradient(135deg, var(--azul-oscuro) 0%, var(--azul-medio) 55%, var(--azul) 100%);
+  color: #fff;
+  padding: 36px 32px 44px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-distrito::after {
+  content: "⚽";
+  position: absolute;
+  right: -10px;
+  bottom: -30px;
+  font-size: 160px;
+  opacity: 0.08;
+  transform: rotate(-12deg);
+}
+
+.hero-distrito .etiqueta-deporte {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,255,255,0.15);
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+.hero-distrito h1 {
+  margin: 14px 0 4px;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.hero-distrito .distrito-nombre {
+  color: #93c5fd;
+}
+
+.hero-distrito p.descripcion {
+  margin: 0;
+  color: #cbd5e1;
+  font-size: 14px;
+  max-width: 480px;
+}
+
+.stats-rapidas {
+  display: flex;
+  gap: 24px;
+  margin-top: 22px;
+  flex-wrap: wrap;
+}
+
+.stat-chip {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 12px;
+  padding: 10px 18px;
+  min-width: 120px;
+}
+
+.stat-chip .valor {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.stat-chip .etiqueta {
+  font-size: 12px;
+  color: #cbd5e1;
+}
+
+/* ---------- LISTA DE RESULTADOS ---------- */
 #listaResultados {
-  padding: 24px;
+  padding: 28px 32px 60px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  max-width: 1000px;
-  margin: 0 auto;
+  gap: 22px;
+  max-width: 1040px;
+  margin: -24px auto 0;
+  position: relative;
 }
 
 .card-cancha {
   background: #fff;
-  border-radius: 8px;
-  padding: 18px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+  border-radius: 14px;
+  padding: 20px 22px;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.08);
+  border: 1px solid var(--borde);
 }
-.card-cancha h3 { margin: 0 0 4px 0; color: #0d2b52; }
-.card-cancha .direccion { margin: 0 0 12px 0; font-size: 13px; color: #555; }
 
-.tabla-horarios-wrap { overflow-x: auto; }
-.tabla-horarios { border-collapse: collapse; width: 100%; }
-.tabla-horarios th, .tabla-horarios td {
-  border: 1px solid #e0e0e0;
-  text-align: center;
-  padding: 6px 8px;
-  min-width: 54px;
+.card-cabecera {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.icono-deporte {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: #eff6ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.card-cabecera .info-cancha {
+  flex: 1;
+}
+
+.card-cabecera h3 {
+  margin: 0 0 4px 0;
+  font-size: 17px;
+  color: var(--azul-oscuro);
+}
+
+.direccion {
+  margin: 0;
   font-size: 13px;
+  color: var(--gris-texto);
 }
-.tabla-horarios thead th { background: #eef2f7; color: #0d2b52; }
-.hora-label { font-weight: bold; background: #f7f7f7; }
 
-.slot.disponible { background: #ffffff; cursor: pointer; }
-.slot.disponible:hover { background: #cdeccd; }
-.slot.reservado { background: #d9364a; color: white; cursor: not-allowed; }
+.badge-libres {
+  background: var(--verde-claro);
+  color: #15803d;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
 
-.leyenda { margin-top: 8px; font-size: 12px; display: flex; gap: 16px; }
+.badge-libres.pocas {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.badge-libres.sin-cupo {
+  background: var(--rojo-claro);
+  color: #b91c1c;
+}
+
+/* ---------- TABLA DE HORARIOS ---------- */
+.tabla-horarios-wrap { overflow-x: auto; border-radius: 10px; }
+
+.tabla-horarios {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.tabla-horarios th, .tabla-horarios td {
+  border: 1px solid var(--borde);
+  text-align: center;
+  padding: 8px 6px;
+  min-width: 52px;
+  font-size: 12.5px;
+}
+
+.tabla-horarios thead th {
+  background: #f8fafc;
+  color: var(--azul-medio);
+  font-weight: 600;
+}
+
+.hora-label {
+  font-weight: 600;
+  background: #f8fafc;
+  color: var(--gris-texto);
+}
+
+.slot.disponible {
+  background: #ffffff;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.slot.disponible:hover {
+  background: var(--verde-claro);
+}
+.slot.reservado {
+  background: var(--rojo-claro);
+  color: #b91c1c;
+  font-weight: 600;
+  cursor: not-allowed;
+}
+
+/* ---------- PIE DE TARJETA ---------- */
+.card-pie {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 14px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.leyenda { font-size: 12px; display: flex; gap: 16px; color: var(--gris-texto); }
 .leyenda span { display: inline-flex; align-items: center; gap: 6px; }
-.caja { width: 12px; height: 12px; border: 1px solid #ccc; display: inline-block; }
-.caja.disponible { background: #fff; }
-.caja.reservado { background: #d9364a; }
+.caja { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+.caja.disponible { background: #fff; border: 1px solid var(--borde); }
+.caja.reservado { background: var(--rojo-claro); border: 1px solid #fca5a5; }
 
-.sin-resultados { padding: 40px; text-align: center; color: #666; }
+.telefono {
+  font-size: 13px;
+  color: var(--gris-texto);
+  margin: 0;
+}
+
+.sin-resultados {
+  padding: 50px 20px;
+  text-align: center;
+  color: var(--gris-texto);
+  background: #fff;
+  border-radius: 14px;
+  border: 1px dashed var(--borde);
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 560px) {
+  .navbar, .hero-distrito, #listaResultados { padding-left: 18px; padding-right: 18px; }
+  .card-cabecera { flex-wrap: wrap; }
+  .badge-libres { margin-left: auto; }
+}
