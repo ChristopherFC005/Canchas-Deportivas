@@ -1,0 +1,67 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f6f8;
+  color: #222;
+}
+
+.header-resultados {
+  padding: 18px 28px;
+  background: #0d2b52;
+  color: #fff;
+}
+.header-resultados h2 { margin: 0 0 4px 0; }
+.header-resultados .subtitulo { font-size: 14px; opacity: 0.85; }
+
+.filtro-fijo {
+  display: inline-block;
+  background: #16407a;
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-top: 8px;
+  font-size: 13px;
+}
+
+#listaResultados {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.card-cancha {
+  background: #fff;
+  border-radius: 8px;
+  padding: 18px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+}
+.card-cancha h3 { margin: 0 0 4px 0; color: #0d2b52; }
+.card-cancha .direccion { margin: 0 0 12px 0; font-size: 13px; color: #555; }
+
+.tabla-horarios-wrap { overflow-x: auto; }
+.tabla-horarios { border-collapse: collapse; width: 100%; }
+.tabla-horarios th, .tabla-horarios td {
+  border: 1px solid #e0e0e0;
+  text-align: center;
+  padding: 6px 8px;
+  min-width: 54px;
+  font-size: 13px;
+}
+.tabla-horarios thead th { background: #eef2f7; color: #0d2b52; }
+.hora-label { font-weight: bold; background: #f7f7f7; }
+
+.slot.disponible { background: #ffffff; cursor: pointer; }
+.slot.disponible:hover { background: #cdeccd; }
+.slot.reservado { background: #d9364a; color: white; cursor: not-allowed; }
+
+.leyenda { margin-top: 8px; font-size: 12px; display: flex; gap: 16px; }
+.leyenda span { display: inline-flex; align-items: center; gap: 6px; }
+.caja { width: 12px; height: 12px; border: 1px solid #ccc; display: inline-block; }
+.caja.disponible { background: #fff; }
+.caja.reservado { background: #d9364a; }
+
+.sin-resultados { padding: 40px; text-align: center; color: #666; }
