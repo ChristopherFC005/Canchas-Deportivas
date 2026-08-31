@@ -1,0 +1,62 @@
+body {
+    background-image: url('WhatsApp-Image-2025-12-29-at-4.21.56-PM-2.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+.container {
+    min-height: 600px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.container h2 {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+footer{
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    background-color:rgb(6, 58, 28);
+    color: white;
+}
+footer ul{
+    list-style: none;
+}
+footer p{
+    text-align: center;
+    
+}
+h2{
+color: white;
+}
+footer li :hover{
+    color: white
+}
+body .row.align-items-center{
+    background-color: white;
+    opacity: 0.8;
+    border-radius: 10px;
+    display: flex;
+    padding: 40px;  
+    margin-top: 10px; 
+}
+.col{
+    color: rgb(109, 109, 109);
+}
+body h2{
+    color: rgb(109, 109, 109);
+}
+body h1{
+    color: rgb(6, 58, 28);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 5rem;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: none;
+}
