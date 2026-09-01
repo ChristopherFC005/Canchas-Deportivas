@@ -14,12 +14,12 @@ function contarDisponibles(cancha) {
 
 function crearBadgeDisponibilidad(cantidad) {
   if (cantidad === 0) {
-    return `<span class="badge-libres sin-cupo">Sin horarios libres</span>`;
+    return `<span class="badge text-bg-danger">Sin horarios libres</span>`;
   }
   if (cantidad <= 4) {
-    return `<span class="badge-libres pocas">${cantidad} horarios libres</span>`;
+    return `<span class="badge text-bg-warning text-dark">${cantidad} horarios libres</span>`;
   }
-  return `<span class="badge-libres">${cantidad} horarios libres</span>`;
+  return `<span class="badge text-bg-success">${cantidad} horarios libres</span>`;
 }
 
 function crearCardCancha(cancha) {
@@ -42,27 +42,26 @@ function crearCardCancha(cancha) {
   const disponibles = contarDisponibles(cancha);
 
   return `
-    <article class="card-cancha">
-      <div class="card-cabecera">
-        <div class="icono-deporte">⚽</div>
-        <div class="info-cancha">
-          <h3>${cancha.nombre}</h3>
-          <p class="direccion">📍 ${cancha.direccion}</p>
+    <article class="cancha-card">
+      <div class="cancha-header">
+        <div>
+          <h3><i class="bi bi-dribbble text-success me-2"></i>${cancha.nombre}</h3>
+          <p class="direccion"><i class="bi bi-geo-alt-fill me-1"></i>${cancha.direccion}</p>
         </div>
         ${crearBadgeDisponibilidad(disponibles)}
       </div>
-      <div class="tabla-horarios-wrap">
-        <table class="tabla-horarios">
+      <div class="table-responsive">
+        <table class="table table-bordered align-middle text-center tabla-horarios mb-0">
           <thead><tr><th></th>${encabezadoDias}</tr></thead>
           <tbody>${filasHoras}</tbody>
         </table>
       </div>
-      <div class="card-pie">
-        <div class="leyenda">
-          <span><span class="caja disponible"></span> Disponible</span>
-          <span><span class="caja reservado"></span> Reservado</span>
+      <div class="cancha-footer">
+        <div class="leyenda-color">
+          <span><span class="caja disponible"></span>Disponible</span>
+          <span><span class="caja reservado"></span>Reservado</span>
         </div>
-        <p class="telefono">📞 ${cancha.telefono}</p>
+        <p class="mb-0 text-secondary small"><i class="bi bi-telephone-fill me-1"></i>${cancha.telefono}</p>
       </div>
     </article>
   `;

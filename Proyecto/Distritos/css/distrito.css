@@ -1,0 +1,100 @@
+/* Distritos/css/distrito.css
+   Complementa a css/styles.css (el estilo principal del sitio).
+   No redefine colores propios: usa las variables --green, --green-dark,
+   --lime, --muted, --line ya definidas en styles.css para mantener
+   la misma linea visual del resto de "Mi Cancha". */
+
+.cancha-card {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 18px 40px rgba(14, 51, 35, 0.08);
+  padding: 24px;
+}
+
+.cancha-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.cancha-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.cancha-card .direccion {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}
+
+.tabla-horarios th {
+  background: #f4f7f5;
+  color: var(--green-dark);
+  font-weight: 700;
+}
+
+.tabla-horarios td.hora-label {
+  background: #f4f7f5;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.slot.disponible {
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.slot.disponible:hover {
+  background: rgba(153, 210, 58, 0.25);
+}
+
+.slot.reservado {
+  background: #fdecec;
+  color: #b42318;
+  font-weight: 600;
+  cursor: not-allowed;
+}
+
+.cancha-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.leyenda-color {
+  font-size: 0.8rem;
+  color: var(--muted);
+  display: flex;
+  gap: 16px;
+}
+
+.leyenda-color .caja {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  margin-right: 4px;
+  vertical-align: middle;
+  border: 1px solid var(--line);
+}
+
+.leyenda-color .caja.disponible { background: #ffffff; }
+.leyenda-color .caja.reservado { background: #fdecec; border-color: #f3b4ac; }
+
+.sin-resultados {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--muted);
+  border: 1px dashed var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+}
