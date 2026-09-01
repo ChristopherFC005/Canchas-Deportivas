@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Cancha | Reservas deportivas</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#inicio">
+        <i class="bi bi-trophy-fill me-2"></i>Mi Cancha
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menuPrincipal">
+        <ul class="navbar-nav ms-auto gap-lg-3">
+          <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="beneficios.html">Beneficios</a></li>
+          <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header id="inicio" class="hero-section">
+    <div class="container hero-content text-center">
+      <span class="badge text-bg-success mb-3">Reservas deportivas online</span>
+      <h1 class="display-4 fw-bold">Tu cancha, tu horario, tu partido.</h1>
+      <p class="lead mx-auto">Reserva facil y juega sin complicaciones con horarios disponibles, datos claros y confirmacion inmediata.</p>
+      <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 mt-4">
+        <button type="button" class="btn btn-success btn-lg">
+          <i class="bi bi-calendar-check me-2"></i>Reservar aqui
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="beneficios" class="section-pad bg-white">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-5">
+            <p class="text-success fw-semibold mb-2">Hazlo facil</p>
+            <h2 class="fw-bold mb-3">Busca, reserva y juega en tres pasos.</h2>
+            <p class="text-secondary">Inspirado en la idea de Mi Cancha, esta seccion muestra el proceso principal de reserva de manera clara para cualquier usuario.</p>
+          </div>
+          <div class="col-lg-7">
+            <div class="row g-3">
+              <div class="col-md-4">
+                <article class="step-card h-100">
+                  <div class="step-number">1</div>
+                  <i class="bi bi-search step-icon"></i>
+                  <h3>Busca</h3>
+                  <p>Elige el deporte, distrito y cancha que prefieras.</p>
+                </article>
+              </div>
+              <div class="col-md-4">
+                <article class="step-card h-100">
+                  <div class="step-number">2</div>
+                  <i class="bi bi-calendar2-check step-icon"></i>
+                  <h3>Reserva</h3>
+                  <p>Selecciona fecha, hora y completa tus datos.</p>
+                </article>
+              </div>
+              <div class="col-md-4">
+                <article class="step-card h-100">
+                  <div class="step-number">3</div>
+                  <i class="bi bi-dribbble step-icon"></i>
+                  <h3>Juega</h3>
+                  <p>Recibe tu confirmacion y disfruta tu partido.</p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="nosotros" class="section-pad bg-light">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <div class="phone-preview">
+              <img src="assets/referencia-cancha-deportiva.png" alt="Referencia visual de pagina de reservas de cancha" class="img-fluid">
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <p class="text-success fw-semibold mb-2">Te guiamos a tu cancha</p>
+            <h2 class="fw-bold mb-3">Una experiencia pensada para deportistas.</h2>
+            <p class="text-secondary">Mi Cancha ayuda a encontrar espacios deportivos disponibles en Lima y facilita la reserva desde una sola pagina.</p>
+            <div class="row g-3 mt-3">
+              <div class="col-sm-6">
+                <div class="info-tile">
+                  <i class="bi bi-geo-alt-fill"></i>
+                  <strong>Ubicacion</strong>
+                  <span>Lima, Peru</span>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="info-tile">
+                  <i class="bi bi-shield-check"></i>
+                  <strong>Seguridad</strong>
+                  <span>Reservas verificadas</span>
+                </div>
+              </div>
+            </div>
+            <button class="btn btn-outline-success mt-4" data-bs-toggle="modal" data-bs-target="#modalNosotros">
+              <i class="bi bi-info-circle me-2"></i>Conocer mas
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contacto" class="footer-section">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-4">
+          <h2 class="h4 fw-bold mb-3"><i class="bi bi-trophy-fill me-2"></i>Mi Cancha</h2>
+          <p>Proyecto front-end responsive con Bootstrap para reservas de canchas deportivas.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <h3 class="h6 fw-bold">Contacto</h3>
+          <p class="mb-1">Lima, Peru</p>
+          <p class="mb-1">+51 990 193 000</p>
+          <p class="mb-0">contacto@micancha.pe</p>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <h3 class="h6 fw-bold">Acerca de</h3>
+          <ul class="list-unstyled mb-0">
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="beneficios.html">Beneficios</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+      <p class="text-center small mb-0">&copy; 2026 Mi Cancha. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+  <div class="modal fade" id="modalNosotros" tabindex="-1" aria-labelledby="modalNosotrosTitulo" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title h5" id="modalNosotrosTitulo">Sobre el proyecto</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <p class="mb-0">Este sitio demuestra uso de Bootstrap, diseno responsive personalizado, formulario validado y ventanas modales para un proyecto front-end universitario.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
+
+
+
